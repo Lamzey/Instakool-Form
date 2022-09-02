@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Register</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv = "refresh" content = "; url = success.html"/>
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="http://instaskool.com/images/Instaskool%20Logo%201.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+	<script
+		src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	<script>
+		function SubForm (){
+			$.ajax({
+				url:"https://api.apispreadsheets.com/data/ecHb1ulBz7u7ZTnO/",
+				type:"post",
+				data:$("#myForm").serializeArray(),
+				success: function(){
+					window.location.assign("success.html")
+				},
+				error: function(){
+					alert("There was an error :(")
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="http://instaskool.com/images/Instaskool%20Logo%201.png" alt="IMG">
+					<br>
+					<br>
+					<br>
+					<p><b>Instaskool with it's partner will provide you the opportunity to learn most in-demand skills for free in 2023. 
+						Join Instaskool in partnership with TP-MAX and become technically inclined in Web Development, Graphics Design, 
+						Animations and Mobile Development.</b></p>
+				</div>
+
+	<form id="myForm">
+		<div class="wrap-input100 validate-input">
+		<label>Date: </label>
+		<input name="Date" type="date" />
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>First Name: </label>
+		<input name="First Name" type="name"/>
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Last Name: </label>
+		<input name="Last Name" type="name" />
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Email: </label>
+		<input name="Email" type="email" />
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Phone: </label>
+		<input name="Phone" type="tel" />
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Sex: </label>
+		<select name="Sex" required>
+			<option selected>Choose...</option>
+			<option>Male</option>
+			<option>Female</option>
+		  </select>
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Skill Of Interest: </label>
+		<select name="Skill" required>
+			<option selected>Choose...</option>
+			<option>Web Development</option>
+			<option>Graphics Design</option>
+			<option>Animations</option>
+			<option>Mobile Development</option>
+		  </select>
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Location: </label>
+		<select name="Location" required>
+			<option selected>Within Lagos Only...</option>
+			<option>Lekki</option>
+			<option>Yaba</option>
+			<option>Ikeja</option>
+		  </select>
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Password: </label>
+		<input name="Password" type="password" />
+		</div>
+		<br/>
+		<div class="wrap-input100 validate-input">
+		<label>Confirm Password: </label>
+		<input name="Confirm Password" type="password" />
+		</div>
+		<br/>
+	</form>
+	<div class="container-login100-form-btn">
+		<button class="login100-form-btn" onclick='SubForm()'>Submit</button>
+	</div>
+</body>
+</html>
